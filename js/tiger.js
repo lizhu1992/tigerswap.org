@@ -56,16 +56,16 @@ function updateYield() {
         });
     });
 
-    var ctx1 = new web3.eth.Contract(uniswapABI,pools[1][0]);
+    var ctx1 = new web3.eth.Contract(uniswapABI,pools[0][0]);
     ctx1.methods.getReserves().call(function(err, result1) {
         ctx1.methods.totalSupply().call(function(err, result2) {
             ctx1.methods.balanceOf(zooAddress).call(function(err, result3) {
                 var totalSupply=result2
                 var stakedSupply=result3
                 var percentageOfSupplyInPool=stakedSupply/totalSupply;
-                pools[1][4]=(((perpoolunit/ (result1['_reserve0']*2/Math.pow(10,18)))*100*pools[1][3])/percentageOfSupplyInPool)
-                pools[1][5]=(result1['_reserve0']*2/Math.pow(10,18)*percentageOfSupplyInPool)
-                $('.pool1yield').animateNumbers(parseInt(pools[1][4])+'%')
+                pools[0][4]=(((perpoolunit/ (result1['_reserve0']*2/Math.pow(10,18)))*100*pools[0][3])/percentageOfSupplyInPool)
+                pools[0][5]=(result1['_reserve0']*2/Math.pow(10,18)*percentageOfSupplyInPool)
+                $('.pool1yield').animateNumbers(parseInt(pools[0][4])+'%')
                 loadedPool()
             });
         });
