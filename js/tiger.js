@@ -339,7 +339,7 @@ function loadedPool() {
             tvl = tvl + pools[0][5];
 
         }
-        $('.tvl span').animateNumbers(parseInt(tvl))
+        //$('.tvl span').animateNumbers(parseInt(tvl))
         console.warn('tvl:' + tvl)
     }
 }
