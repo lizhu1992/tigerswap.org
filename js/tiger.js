@@ -335,21 +335,10 @@ function loadedPool() {
     if (loadedpools > 3) {
         var tvl = 0;
         for (var i = 0; i < pools.length; i++) {
-            //console.log(i,pools[i][5],pools[i][5])
-            tvl = tvl + pools[i][5];
+            console.log(i,pools[i][5],pools[i][5])
+            tvl = tvl + pools[0][5];
 
         }
-
-        var realtvl = 0;
-        for (var i = 0; i < pools.length; i++) {
-            if (i != 2 && i != 3) {
-
-                //console.log(i,pools[i][5],pools[i][5]);
-                realtvl = realtvl + pools[i][5];
-            }
-
-        }
-        //console.log(realtvl)
         $('.tvl span').animateNumbers(parseInt(tvl))
         console.warn('tvl:' + tvl)
     }
